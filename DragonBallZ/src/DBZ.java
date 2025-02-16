@@ -5,6 +5,7 @@ public class DBZ {
 
         Resistencia miResistencia=Resistencia.MEDIA;
         Resistencia miiResistencia=Resistencia.ALTA;
+        Resistencia miiiResistencia=Resistencia.BAJA;
 
         Goku goku=new Goku(miResistencia,"Goku",2000,"Base","no");
         System.out.println("Mi nombre es "+goku.getNombre());
@@ -30,6 +31,19 @@ public class DBZ {
         cell.darGolpe();
         System.out.println(cell.lanzarKamehameha());
         System.out.println(cell.autoDestruirse());
+
+        Krillin krillin=new Krillin(miiiResistencia,"Krillin",800,"base","blanca");
+        System.out.println("Hola soy "+krillin.getNombre());
+        System.out.println("Voy a arriesgarme a lanzar ataques, pero no creo lograr mucho ");
+        krillin.lanzarKamehameha();
+        krillin.darGolpe();
+        krillin.lanzarKienzan();
+        System.out.println(krillin.getResistencia());
+        System.out.println(krillin.getKi()+" Mi ki es insuficiente");
+        krillin.aumentarKi();
+        System.out.println(krillin.getKi()+" Mi ki sigue siendo insuficiente");
+        System.out.println(krillin.getNivel());
+        System.out.println(krillin.piel);
 
     }
 }

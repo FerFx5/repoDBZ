@@ -1,6 +1,6 @@
 public abstract class Individuo {
     private String nombre;
-    protected int ki;
+    private int ki;
     private String nivel;
     private Resistencia resistencia;
 
