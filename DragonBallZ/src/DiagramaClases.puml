@@ -1,0 +1,69 @@
+@startuml
+interface AtaqueComun{
+    +lanzarKamehameha(): void
+}
+interface SubeNivel{
+    +aumentarKi(): void
+}
+interface ExpulsionEnergia{
+    +lanzarEnergia(): void
+}
+interface AutoDestruccion{
+    +autoDestruirse(): void
+}
+
+abstract class Individuo{
+    -nombre
+    -ki
+    -nivel
+    -resistencia
+    +darGolpe(): void
+}
+class Humano{
+    -piel
+
+}
+class Sayayin{
+    -cola
+    +puedeVolarConEnergia(): void
+}
+class Androide{
+    -manchas
+    +puedeVolarSinEnergia(): void
+}
+class Goku{
+    +hacerTeletrasportacion(): void
+    +hacerGenkidama(): void
+}
+class Vegeta{
+    +hacerResplandorFinal(): void
+}
+class Cell{
+    +regenerarse(): void
+}
+class Krillin{
+    +lanzarKienzan(): void
+}
+Individuo<|--Humano
+Individuo<|--Androide
+Individuo<|--Sayayin
+
+Humano<|--Krillin
+Sayayin<|--Goku
+Sayayin<|--Vegeta
+Androide<|--Cell
+
+Goku..>AtaqueComun
+Krillin..>AtaqueComun
+Vegeta..>AutoDestruccion
+Cell..>AutoDestruccion
+Goku..>SubeNivel
+Krillin..>SubeNivel
+Vegeta..>SubeNivel
+Cell..>SubeNivel
+Goku..>ExpulsionEnergia
+Krillin..>ExpulsionEnergia
+Vegeta..>ExpulsionEnergia
+Cell..>ExpulsionEnergia
+
+@enduml
